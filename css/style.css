@@ -70,7 +70,6 @@ p, h3 {
     line-height: 20px;
     padding-left: 35px;
 }
-
 .search-input .form-control::placeholder {
     color: white;
 }
