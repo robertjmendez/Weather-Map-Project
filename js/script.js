@@ -3,12 +3,12 @@
 
     // Weather API configuration
     const weatherApiUrl = "https://api.openweathermap.org/data/2.5/onecall";
-    const weatherApiKey = openWeatherApiKey;
+    const weatherApiKey = process.env.OPEN_WEATHER_API_KEY;
     const weatherUnits = "imperial";
 
     // Mapbox configuration
     const mapboxGeocodingUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/";
-    const mapboxAccessToken = mapBoxApiKey;
+    const mapboxAccessToken = process.env.MAPBOX_API_KEY;
 
 
     // DOM elements
