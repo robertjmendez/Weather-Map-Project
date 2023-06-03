@@ -88,21 +88,34 @@
                 return response.json();
             })
             .then(function(data) {
-                const cityFeature = data.features.find(function(feature) {
+                let placeFeature = data.features.find(function(feature) {
                     return feature.place_type.includes('place');
                 });
 
-                const city = cityFeature ? cityFeature.text : '';
+                let regionFeature = data.features.find(function(feature) {
+                    return feature.place_type.includes('region');
+                });
 
-                // Check if there is a region context
-                let stateFeature = data.features[0].context ? data.features[0].context.find(function(context) {
-                    return context.id.startsWith('region');
-                }) : undefined;
-                const state = stateFeature ? stateFeature.text : '';
+                let countryFeature = data.features.find(function(feature) {
+                    return feature.place_type.includes('country');
+                });
+
+                let location = '';
+
+                if (placeFeature) {
+                    location += placeFeature.text;
+                }
+
+                if (regionFeature) {
+                    location += (location ? ', ' : '') + regionFeature.text;
+                }
+
+                if (!placeFeature && !regionFeature && countryFeature) {
+                    location += countryFeature.text;
+                }
 
                 return {
-                    city: city,
-                    state: state
+                    location: location
                 };
             });
     }
@@ -132,9 +145,7 @@
 
         reverseGeocode(coordinates)
             .then(function (locationData) {
-                const city = locationData.city;
-                const state = locationData.state;
-                const locationName = `${city}, ${state}`;
+                const locationName = locationData.location;
                 const iconHTML = '<i class="fas fa-location-dot mr-2"></i>';
                 topLocation.html(iconHTML + locationName);
 
