@@ -137,6 +137,12 @@ p, h3 {
     margin: -5px 0;
 }
 
+@media (min-width: 300px) {
+    .card {
+        width: 100%;
+    }
+}
+
 @media (min-width: 768px) {
     .card {
         width: 30%;
@@ -162,3 +168,9 @@ p, h3 {
         width: 18.5%;
     }
 }
+
+
+
+
+
+

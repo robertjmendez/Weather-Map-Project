@@ -66,18 +66,16 @@
     // Render forecast card
     function renderForecastCard(dayOfWeek, iconUrl, currentTemp, maxTemp, minTemp, weatherDescription, humidity, wind, pressure) {
         return `
-    <div class="card mb-2 mx-2 col-xs-12">
+    <div class="card mb-2 mx-2 ">
         <div class="card-header rounded-top d-flex justify-content-center pt-3">${dayOfWeek}</div>
-        <div class="image d-flex justify-content-center">
-            <img src="${iconUrl}" alt="Weather Icon" height="100px" width="100px">
-        </div>
+            <img src="${iconUrl}" alt="Weather Icon" height="100px" width="100px" class="mx-auto">
         <div class="card-body text-primary pt-0">
-            <h4 class="card-text m-0 text-center mb-2">${currentTemp} °F</h4>
-            <p class="card-text m-0 text-center">${weatherDescription}</p>
-            <p class="card-title m-0 text-center">H:${maxTemp} L:${minTemp} °F</p>
-            <p class="card-text m-0 text-center">Humidity: ${humidity}%</p>
-            <p class="card-text m-0 text-center">Wind: ${wind} mph</p>
-            <p class="card-text m-0 text-center">Pressure: ${pressure} hPa</p>
+            <h4 class="card-text m-0 text-center mb-2 current-temp">${currentTemp} °F</h4>
+            <p class="card-text m-0 text-center ">${weatherDescription}</p>
+            <p class="card-title m-0 text-center ">H:${maxTemp} L:${minTemp} °F</p>
+            <p class="card-text m-0 text-center ">Humidity: ${humidity}%</p>
+            <p class="card-text m-0 text-center ">Wind: ${wind} mph</p>
+            <p class="card-text m-0 text-center ">Pressure: ${pressure} hPa</p>
         </div>
     </div>
   `;
