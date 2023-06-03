@@ -36,4 +36,4 @@ This application is a user-friendly, interactive web application that displays c
 
 ## Live Demo
 
-Experience the live demo of the application at this link: [Live Demo](https://weather-map-project.vercel.app/)
+Experience the live demo of the application at this link: [Live Demo](https://dulcet-genie-6b198e.netlify.app/)
