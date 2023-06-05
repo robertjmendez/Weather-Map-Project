@@ -22,6 +22,7 @@ This application is a user-friendly, interactive web application that displays c
 
 - HTML5
 - CSS3
+- Bootstrap
 - JavaScript (ES6+)
 - jQuery
 - AJAX
